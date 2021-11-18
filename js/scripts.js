@@ -13,13 +13,13 @@ function calculator(event) {
 
     switch (values[2]) {
       case '*':
-        result.innerText = `${values[0]} * ${values[1]} = ${values[0] * values[1]}`;
+        result.innerText = `= ${values[0] * values[1]}`;
         break;
       case '+':
-        result.innerText = `${values[0]} + ${values[1]} = ${values[0] + values[1]}`;
+        result.innerText = `= ${values[0] + values[1]}`;
         break;
       case '-':
-        result.innerText = `${values[0]} - ${values[1]} = ${values[0] - values[1]}`;
+        result.innerText = `= ${values[0] - values[1]}`;
         break;
       case '/':
         if (values[1] == 0 ) { 
@@ -29,7 +29,7 @@ function calculator(event) {
         } else if (error.style.display == 'inline') {
           error.style.display = 'none';
         }
-        result.innerText = `${values[0]} / ${values[1]} = ${values[0] / values[1]}`;
+        result.innerText = `= ${values[0] / values[1]}`;
         break;
       default:
         return;
