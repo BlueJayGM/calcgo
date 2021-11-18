@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+:root {
+  --blue:#357abd;
+  --blue-ligth:#72b1f0;
+  --blue-dark:#144270;
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100vw;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue-dark);
+}
+
+.container {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container::before {
+  content: '';
+  background: var(--blue-ligth);
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: border_flash 3s infinite;
+}
+
+.container::after {
+  content: '';
+  background: var(--blue-ligth);
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: border_flash 3s infinite;
+}
+
+@keyframes border_flash {
+  from {
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  to {
+    left: 100%;
+    width: 0%;
+  }
+}
+
+.image {
+  width: 100%;
+  text-align: center;
+}
+
+.image img {
+  width: 120px;
+  margin-bottom: 2rem;
+}
+
+.form {
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.2rem;
+
+  padding: 2rem 1.2rem;
+}
+
+.form input {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  flex: 1;
+  font-size: 1.2rem;
+  background: white;
+  color: #333;
+  border: none;
+  border-radius: 0.2rem;
+  transition: 0.2s;
+}
+
+.form input:nth-child(3) {
+  margin-bottom: 0.2rem;
+}
+
+.form input:hover, 
+.form input:focus {
+  border: none;
+  outline: none;
+
+  box-shadow: 0 0 0 2px var(--blue), 0 0 0 4px var(--blue-ligth);
+}
+
+.form input[type="submit"] {
+  margin-top: 1rem;
+  background: var(--blue-ligth);
+  cursor: pointer;
+  color: white;
+}
+
+.form input[type="submit"]:hover,
+.form input[type="submit"]:focus {
+  opacity: 0.9;
+  box-shadow: 0 0 0 2px var(--blue), 0 0 0 4px var(--blue-ligth);
+}
+
+.result {
+  font-size: 2rem;
+  color: var(--blue-ligth);
+  font-weight: 500;
+}
+
+.error {
+  color: tomato;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  display: none;
+}

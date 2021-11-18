@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcGO - Home</title>
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <div class="image">
+        <img src="./img/logo.png" alt="logo - CalcGO">
+      </div>
+      <div class="result">
+        4 + 4 = 20
+      </div>
+      <form class="form">
+        <input type="number"  id="first_number" 
+          name="first_number" placeholder="Primeiro valor">
+        <input type="number" id="second_number" 
+          name="second_number" placeholder="Segundo valor">
+        <input type="text" id="operator" 
+          name="operator" placeholder="+ / * -" 
+          onblur="blurOperator()" onkeyup="changeOperator()">
+        <small class="error"></small>
+        <input type="submit" value="Calcular" onclick="calculator(event)">
+      </form>
+    </main>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
